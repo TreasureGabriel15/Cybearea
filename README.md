@@ -1,2 +1,2 @@
 # Cybearea
-A cybersecurity learning platform
+A social learning platform
