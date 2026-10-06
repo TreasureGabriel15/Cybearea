@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sign in | Cybearea</title>
+  <link rel="stylesheet" href="css/login.css">
+</head>
+<body>
+  <a class="home" href="index.html">Back to home</a>
+
+  <div class="stage">
+    <section class="left">
+      <svg class="rings" viewBox="0 0 600 600" aria-hidden="true">
+  <defs>
+    <radialGradient id="cg"><stop offset="0" stop-color="#2fc4f0" stop-opacity=".35"/><stop offset="1" stop-color="#2fc4f0" stop-opacity="0"/></radialGradient>
+    <linearGradient id="rg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2fc4f0"/><stop offset="1" stop-color="#d4f5ff"/></linearGradient>
+  </defs>
+  <circle cx="300" cy="300" r="150" fill="url(#cg)"/>
+  <g class="spin" style="--d:110s"><circle class="rd" cx="300" cy="300" r="270"/><circle class="nf" cx="300.0" cy="30.0" r="9"/><circle class="nf" cx="533.8" cy="165.0" r="9"/><circle class="nf" cx="533.8" cy="435.0" r="9"/><circle class="nd" cx="300.0" cy="570.0" r="9"/><circle class="nd" cx="66.2" cy="435.0" r="9"/><circle class="nd" cx="66.2" cy="165.0" r="9"/></g>
+  <g class="spin rev" style="--d:75s"><circle class="rs" cx="300" cy="300" r="200"/>
+    <circle class="ra" cx="300" cy="300" r="200" transform="rotate(-90 300 300)" stroke-dasharray="779 1257"/><circle class="nf" cx="368.4" cy="112.1" r="9"/><circle class="nf" cx="499.9" cy="307.0" r="9"/><circle class="nf" cx="355.1" cy="492.3" r="9"/><circle class="nd" cx="134.2" cy="411.8" r="9"/><circle class="nd" cx="142.4" cy="176.9" r="9"/></g>
+  <g class="spin" style="--d:55s"><circle class="rd" cx="300" cy="300" r="130"/><circle class="nf" cx="391.9" cy="208.1" r="9"/><circle class="nd" cx="391.9" cy="391.9" r="9"/><circle class="nd" cx="208.1" cy="391.9" r="9"/><circle class="nd" cx="208.1" cy="208.1" r="9"/></g>
+</svg>
+      <div class="pitch">
+        <a class="wordmark" href="index.html">Cybearea</a>
+        <h1>Hands-on cybersecurity, one lesson at a time.</h1>
+        <ul class="facts">
+          <li>Six specializations with guided lesson paths</li>
+          <li>Quizzes to check what stuck</li>
+          <li>Group and direct chats with other learners</li>
+        </ul>
+      </div>
+    </section>
+
+    <main class="card">
+      <div class="glare" aria-hidden="true"></div>
+
+      <header class="brand">
+        <h2>Welcome</h2>
+        <p>Sign in or create an account to continue.</p>
+      </header>
+
+      <section id="auth-view">
+        <div class="tabs" role="tablist">
+          <button type="button" id="tab-signin" class="tab active" role="tab">Sign in</button>
+          <button type="button" id="tab-signup" class="tab" role="tab">Create account</button>
+        </div>
+
+        <form id="auth-form" novalidate>
+          <div id="email-row" hidden>
+            <label for="email-in">Email</label>
+            <input id="email-in" type="email" autocomplete="email">
+          </div>
+
+          <label for="username" id="username-label">Username or email</label>
+          <input id="username" type="text" autocomplete="username" required>
+
+          <label for="password" id="password-label">Password</label>
+          <div class="pw">
+            <input id="password" type="password" autocomplete="current-password" required>
+            <button type="button" id="pw-toggle" aria-label="Show password">Show</button>
+          </div>
+          <p id="hint" class="hint" hidden>At least 8 characters.</p>
+
+          <p id="auth-msg" class="msg" role="alert"></p>
+          <button type="submit" id="sign-in">Sign in</button>
+        </form>
+
+        <div class="divider"><span>or</span></div>
+
+        <div id="google-btn"></div>
+        <button type="button" id="google-fallback" class="google">
+          <svg viewBox="0 0 48 48" width="18" height="18" aria-hidden="true">
+            <path fill="#EA4335" d="M24 9.5c3.5 0 6.6 1.2 9.1 3.6l6.8-6.8C35.8 2.4 30.3 0 24 0 14.6 0 6.5 5.4 2.6 13.2l7.9 6.1C12.4 13.6 17.7 9.5 24 9.5z"/>
+            <path fill="#4285F4" d="M46.5 24.5c0-1.6-.1-3.1-.4-4.5H24v9h12.7c-.6 3-2.3 5.5-4.8 7.2l7.5 5.8c4.4-4.1 7.1-10.1 7.1-17.5z"/>
+            <path fill="#FBBC05" d="M10.5 28.7c-.5-1.4-.8-3-.8-4.7s.3-3.2.8-4.7l-7.9-6.1C.9 16.4 0 20.1 0 24s.9 7.6 2.6 10.8l7.9-6.1z"/>
+            <path fill="#34A853" d="M24 48c6.5 0 11.9-2.1 15.9-5.8l-7.5-5.8c-2.1 1.4-4.9 2.3-8.4 2.3-6.3 0-11.6-4.1-13.5-9.8l-7.9 6.1C6.5 42.6 14.6 48 24 48z"/>
+          </svg>
+          <span id="google-label">Sign in with Google</span>
+        </button>
+      </section>
+    </main>
+  </div>
+
+  <dialog id="confirm-dialog">
+    <form id="confirm-form" novalidate>
+      <h2>Confirm your password</h2>
+      <p class="sub">Type it once more to finish creating your account.</p>
+      <label for="confirm-pw">Confirm password</label>
+      <input id="confirm-pw" type="password" autocomplete="new-password" required>
+      <p id="confirm-msg" class="msg" role="alert"></p>
+      <div class="actions">
+        <button type="button" id="confirm-cancel" class="ghost">Cancel</button>
+        <button type="submit" class="primary">Confirm</button>
+      </div>
+    </form>
+  </dialog>
+
+  <script src="js/login.js"></script>
+</body>
+</html>

@@ -7,9 +7,9 @@
 // 3) Paste the Client ID below. Google sign-in does NOT work from a file:// page.
 const GOOGLE_CLIENT_ID = "YOUR_GOOGLE_CLIENT_ID.apps.googleusercontent.com";
 
-const USERS_KEY = "valhalla_users";      // { username: { email, salt?, hash?, provider? } }
-const SESSION_KEY = "valhalla_session";
-const profileKey = (u) => "valhalla_profile_" + u;
+const USERS_KEY = "cybearea_users";      // { username: { email, salt?, hash?, provider? } }
+const SESSION_KEY = "cybearea_session";
+const profileKey = (u) => "cybearea_profile_" + u;
 
 const $ = (id) => document.getElementById(id);
 let mode = "signin"; // or "signup"
