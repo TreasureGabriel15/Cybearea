@@ -1,0 +1,41 @@
+/* Admin panel (loads after app.css) */
+a.navbtn { text-decoration: none; }
+.badge { align-self: flex-start; margin: 0 0.75rem 1rem; padding: 0.15rem 0.7rem; color: var(--accent); font-size: 0.8rem; border: 1px solid var(--accent); border-radius: 999px; }
+.muted { color: var(--muted); }
+
+.stats { display: grid; grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr)); gap: 1rem; margin: 1.25rem 0 2rem; }
+.stat { padding: 1.1rem 1.2rem; border: 1px solid var(--line); border-radius: 14px; background: linear-gradient(160deg, rgba(20, 52, 78, 0.5), rgba(5, 18, 36, 0.7)); }
+.stat b { display: block; font: 700 2.3rem Georgia, "Times New Roman", serif; line-height: 1.1; }
+.stat span { color: var(--muted); font-size: 0.9rem; }
+
+.twocol { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+.box { padding: 1.4rem; border: 1px solid var(--line); border-radius: 16px; background: rgba(255, 255, 255, 0.03); }
+.box h3 { margin: 0 0 0.8rem; font-family: Georgia, serif; font-size: 1.15rem; }
+.barrow { display: grid; grid-template-columns: 10rem 1fr 2.4rem; align-items: center; gap: 0.75rem; margin: 0.6rem 0; font-size: 0.92rem; }
+.barrow em { font-style: normal; text-align: right; color: var(--muted); }
+
+.toolbar { display: flex; align-items: center; justify-content: space-between; gap: 1rem; margin: 1rem 0; }
+.toolbar input { max-width: 20rem; }
+.tablewrap { overflow-x: auto; border: 1px solid var(--line); border-radius: 14px; }
+table { width: 100%; min-width: 46rem; border-collapse: collapse; }
+th, td { padding: 0.75rem 0.9rem; text-align: left; vertical-align: middle; border-bottom: 1px solid var(--line); }
+th { font-size: 0.85rem; font-weight: 500; color: var(--muted); }
+tbody tr:last-child td { border-bottom: 0; }
+td.msg-text { max-width: 24rem; overflow-wrap: anywhere; }
+
+.role { padding: 0.1rem 0.6rem; font-size: 0.8rem; color: var(--muted); border: 1px solid var(--line); border-radius: 999px; }
+.role.admin { color: var(--accent); border-color: var(--accent); }
+.chip2 { display: inline-flex; align-items: center; gap: 0.35rem; margin: 0.1rem 0.4rem 0.1rem 0; font-size: 0.85rem; }
+.chip2 i { width: 8px; height: 8px; border-radius: 50%; background: var(--acc); }
+
+.actions-cell { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.mini { padding: 0.3rem 0.65rem; color: var(--text); font-size: 0.82rem; background: none; border: 1px solid var(--line); border-radius: 8px; cursor: pointer; transition: border-color 0.2s, color 0.2s; }
+.mini:hover { border-color: var(--accent); }
+.mini.danger:hover { border-color: #ff9b8a; color: #ff9b8a; }
+.note { margin-top: 1.25rem; color: var(--muted); font-size: 0.9rem; max-width: 44rem; }
+
+@media (max-width: 56rem) {
+  .twocol { grid-template-columns: 1fr; }
+  .barrow { grid-template-columns: 8rem 1fr 2rem; }
+  .badge { display: none; }
+}

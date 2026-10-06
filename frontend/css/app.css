@@ -49,6 +49,9 @@ button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visib
           backdrop-filter: blur(14px);
 }
 .brand {
+  display: block;
+  color: var(--text);
+  text-decoration: none;
   padding: 0 0.75rem 1.1rem;
   font-family: Georgia, "Times New Roman", serif;
   font-size: 1.75rem;

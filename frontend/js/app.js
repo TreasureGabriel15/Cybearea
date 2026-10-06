@@ -1,5 +1,5 @@
 (function () {
-  const SESSION = "valhalla_session", USERS = "valhalla_users";
+  const SESSION = "cybearea_session", USERS = "cybearea_users";
   const user = localStorage.getItem(SESSION);
   let users = {};
   try { users = JSON.parse(localStorage.getItem(USERS) || "{}"); } catch (e) {}
@@ -11,7 +11,10 @@
   const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
   const spec = (id) => SPECS.find((s) => s.id === id);
 
-  const profKey = "valhalla_profile_" + user, arenaKey = "valhalla_arena_" + user;
+  if (typeof ensureRoles === "function") users = ensureRoles();
+  if (users[user].role === "admin") document.getElementById("admin-link").hidden = false;
+
+  const profKey = "cybearea_profile_" + user, arenaKey = "cybearea_arena_" + user;
   let arena = load(arenaKey, { specs: [], active: null, done: {} });
   let view = "arena", picking = false, draft = [], sel = -1;
   const root = $("#view");
@@ -197,7 +200,7 @@
   });
 
   // ---------- chats (stored in this browser for now) ----------
-  const chatKey = (id) => "valhalla_chat_" + id;
+  const chatKey = (id) => "cybearea_chat_" + id;
   let thread = "g:general";
 
   function threadList() {
@@ -247,11 +250,11 @@
   });
 
   window.addEventListener("storage", (e) => {
-    if (view === "chats" && e.key && e.key.indexOf("valhalla_chat_") === 0) paintMsgs();
+    if (view === "chats" && e.key && e.key.indexOf("cybearea_chat_") === 0) paintMsgs();
   });
 
   // ---------- quizzes ----------
-  const quizKey = "valhalla_quiz_" + user;
+  const quizKey = "cybearea_quiz_" + user;
   let best = load(quizKey, {}), quiz = null;
   const newQuiz = (id) => ({ spec: id, i: 0, score: 0, picked: null, done: false });
 

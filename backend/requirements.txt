@@ -1,0 +1,4 @@
+Flask>=3.0,<4
+# Only needed for "Sign in with Google" on the server:
+google-auth>=2.0
+requests>=2.0

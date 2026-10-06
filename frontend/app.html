@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>CYBEAREA</title>
+  <title>Cybearea</title>
   <link rel="stylesheet" href="css/app.css">
 </head>
 <body>
   <div class="shell">
     <aside class="side">
-      <a class="brand" href="index.html">Valhalla</a>
+      <a class="brand" href="index.html">Cybearea</a>
 
       <button class="me navbtn" data-view="profile" type="button" aria-label="Profile">
         <span class="avatar" id="avatar">?</span>
@@ -34,6 +34,10 @@
 
       <div class="spacer"></div>
 
+      <a class="navbtn" id="admin-link" href="admin/" hidden aria-label="Admin panel">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg><span class="lb">Admin</span>
+      </a>
+
       <button class="navbtn" id="logout" type="button" aria-label="Log out">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><path d="M16 17l5-5-5-5"/><path d="M21 12H9"/></svg><span class="lb">Log out</span>
       </button>
@@ -43,6 +47,7 @@
   </div>
 
   <script src="js/data.js"></script>
+  <script src="js/shared.js"></script>
   <script src="js/app.js"></script>
 </body>
 </html>

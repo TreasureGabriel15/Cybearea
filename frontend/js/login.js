@@ -113,7 +113,7 @@ $("confirm-form").addEventListener("submit", async (e) => {
   const { email, username, password } = pending;
   const salt = newSalt();
   const users = loadUsers();
-  users[username] = { email, salt, hash: await hashPassword(password, salt) };
+  users[username] = { email, salt, hash: await hashPassword(password, salt), created: Date.now() };
   saveUsers(users);
   closeConfirm();
   $("auth-form").reset();
@@ -140,7 +140,7 @@ function handleGoogle(resp) {
     const base = email.split("@")[0].replace(/[^a-z0-9_.-]/g, "").slice(0, 16) || "user";
     name = base;
     for (let i = 2; users[name]; i++) name = base + i;
-    users[name] = { email, provider: "google" };
+    users[name] = { email, provider: "google", created: Date.now() };
     saveUsers(users);
     localStorage.setItem(profileKey(name), JSON.stringify({ name: p.name || "", email, notes: "" }));
   }
@@ -206,6 +206,7 @@ $("pw-toggle").addEventListener("click", () => {
 
 // ---------- start ----------
 setMode(location.hash === "#signup" ? "signup" : "signin");
+window.addEventListener("hashchange", () => setMode(location.hash === "#signup" ? "signup" : "signin"));
 initGoogle();
 const current = localStorage.getItem(SESSION_KEY);
 if (current && loadUsers()[current]) location.replace("app.html");
