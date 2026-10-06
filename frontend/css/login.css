@@ -50,8 +50,8 @@ body::before {
 }
 .card { grid-column: 2; }
 
-/* ---------- right: brand panel with the rotating path rings ---------- */
-.right { position: relative; align-self: stretch; display: flex; align-items: center; }
+/* ---------- left: brand panel with the rotating path rings ---------- */
+.left { position: relative; align-self: stretch; display: flex; align-items: center; }
 .rings { position: absolute; left: 68%; top: 50%; width: min(40rem, 100%); transform: translate(-50%, -50%); opacity: 0.8; pointer-events: none; }
 .rings .rd { fill: none; stroke: rgba(120, 200, 235, 0.25); stroke-width: 1.5; stroke-dasharray: 3 11; stroke-linecap: round; }
 .rings .rs { fill: none; stroke: rgba(120, 200, 235, 0.14); stroke-width: 8; }
